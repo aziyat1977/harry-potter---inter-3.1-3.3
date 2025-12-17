@@ -1,19 +1,32 @@
 export enum SlideType {
   TITLE = 'TITLE',
-  AGENDA = 'AGENDA',
-  STORY = 'STORY',
-  THEORY = 'THEORY',
-  QUIZ = 'QUIZ',
-  GAP_FILL = 'GAP_FILL',
-  KEY = 'KEY',
+  MFP = 'MFP',
+  QUIZ_SINGLE = 'QUIZ_SINGLE',
   END = 'END'
 }
 
-export interface Question {
+export interface MFPData {
+  meaning: {
+    eng: string;
+    rus: string;
+    uzb: string;
+  };
+  form: {
+    formula: string;
+    notes: string;
+  };
+  pronunciation: {
+    word: string;
+    ipa: string;
+  };
+  examples: string[];
+}
+
+export interface QuizQuestion {
   id: number;
   question: string;
-  options: { id: string; text: string }[];
-  correctAnswer: string;
+  options: string[];
+  correctIndex: number;
   explanation?: string;
 }
 
@@ -22,22 +35,8 @@ export interface SlideData {
   type: SlideType;
   title: string;
   subtitle?: string;
-  content?: string | string[]; // For stories or bullet points
-  questions?: Question[];
-  imagePrompt?: string; // Description for a placeholder image
-  context?: string; // For story context
-  speaker?: string; // For title slide presenter
-  visual?: string; // Description of visual
-  gapFillExercises?: GapFillExercise[];
-}
-
-export interface GapFillExercise {
-  title: string;
-  sentences: {
-    id: number;
-    textBefore: string;
-    answer: string;
-    textAfter: string;
-    options?: string[]; // For dropdowns
-  }[];
+  content?: string; 
+  mfp?: MFPData;
+  quizQuestion?: QuizQuestion;
+  visualId?: string; 
 }
