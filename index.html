@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defense Against the Dark Arts (and Grammar)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              parchment: {
+                100: '#fcf5e5',
+                200: '#f3e5ab',
+                300: '#e6d28c',
+                800: '#5a4632',
+                900: '#2c1e12',
+              },
+              gryffindor: '#740001',
+              slytherin: '#1a472a',
+              hufflepuff: '#ecb939',
+              ravenclaw: '#0e1a40',
+            },
+            fontFamily: {
+              magic: ['"Cinzel"', 'serif'],
+              body: ['"Cormorant Garamond"', 'serif'],
+              hand: ['"Mountains of Christmas"', 'cursive'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'flicker': 'flicker 3s infinite alternate',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              flicker: {
+                '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': { opacity: 1 },
+                '20%, 24%, 55%': { opacity: 0.5 },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        margin: 0;
+        overflow: hidden;
+      }
+      /* Custom Scrollbar for inner content */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #5a4632;
+        border-radius: 4px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
